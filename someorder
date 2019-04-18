@@ -1,0 +1,1 @@
+sudo -i -u postgres  切换到postgres账号
