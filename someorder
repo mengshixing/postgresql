@@ -1,1 +1,8 @@
 sudo -i -u postgres  切换到postgres账号
+\psql  切换到shell页面
+\l 数据库列表
+create database "ad-management-system"; 带‘-’等特殊字符的需要用双引号
+create role "ad-management-system-user" with superuser; 创建一个超级管理员
+\du 查看管理员列表 
+alter role "ad-management-system-user" with login; 给用户赋登陆权限
+alter role "ad-management-system-user" with password '123456';给用户赋登陆密码
