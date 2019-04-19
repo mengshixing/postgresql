@@ -7,7 +7,10 @@ create role "ad-management-system-user" with superuser; 创建一个超级管理
 alter role "ad-management-system-user" with login; 给用户赋登陆权限
 alter role "ad-management-system-user" with password '123456';给用户赋登陆密码
 select usename, passwd is null from pg_shadow; 查看数据库账号密码
-\d 表列表
+\d 表列表包含视图索引等
 \d+命令，该命令将显示比\d命令更详细的信息，除了前面介绍的那些，它还会显示任何与表列关联的注释，以及表中出现的ODI
 \dn+ schema模式列表详情
-
+\dt 表列表
+\di 查看索引
+\d tablename 查看某个表具体字段机构
+psql -U postgres -d database -f sqlScript.sql 将sqlScript.sql导入到名为database的数据库中
