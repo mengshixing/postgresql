@@ -14,3 +14,11 @@ select usename, passwd is null from pg_shadow; 查看数据库账号密码
 \di 查看索引
 \d tablename 查看某个表具体字段机构
 psql -U postgres -d database -f sqlScript.sql 将sqlScript.sql导入到名为database的数据库中
+
+#ERROR# 
+关于ERROR : duplicate key value violates unique constraint XXXX 
+主键自增起始位置冲突,查看当前最大id,自增id,赋值即可
+select max(id) from ads;
+select nextval('ad_id_seq');
+select setval('ad_id_seq',169);
+
