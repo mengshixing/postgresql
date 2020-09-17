@@ -22,3 +22,5 @@ select max(id) from ads;
 select nextval('ad_id_seq');
 select setval('ad_id_seq',169);
 
+pg_dump -h 127.0.0.1 -p 5432 -U ad-management-system-user -c -f ad_back.sql ad-management-system
+
