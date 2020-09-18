@@ -7,6 +7,7 @@ create role "ad-management-system-user" with superuser; 创建一个超级管理
 alter role "ad-management-system-user" with login; 给用户赋登陆权限
 alter role "ad-management-system-user" with password '123456';给用户赋登陆密码
 select usename, passwd is null from pg_shadow; 查看数据库账号密码
+\c runoobdb 切换数据库
 \d 表列表包含视图索引等
 \d+命令，该命令将显示比\d命令更详细的信息，除了前面介绍的那些，它还会显示任何与表列关联的注释，以及表中出现的ODI
 \dn+ schema模式列表详情
@@ -24,3 +25,4 @@ select setval('ad_id_seq',169);
 
 pg_dump -h 127.0.0.1 -p 5432 -U ad-management-system-user -c -f ad_back.sql ad-management-system
 
+psql -U ad-management-system-user -f /var/tmp/ad_back.sql ad-management-system 
